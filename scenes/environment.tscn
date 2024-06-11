@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b62tgy3ler8iv"]
+[gd_scene load_steps=5 format=3 uid="uid://b62tgy3ler8iv"]
+
+[ext_resource type="PackedScene" uid="uid://bepb86cncapy4" path="res://scenes/player.tscn" id="1_3dbga"]
+[ext_resource type="Script" path="res://scenes/camera_3d.gd" id="2_tqupu"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_wqo3g"]
 
@@ -17,5 +20,13 @@ shape = SubResource("WorldBoundaryShape3D_wqo3g")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 mesh = SubResource("PlaneMesh_j1440")
 
+[node name="Player" parent="." instance=ExtResource("1_3dbga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 8.34538, 0)
+shadow_enabled = true
+
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-2.91066e-08, 0.934807, -0.355156, 4.57521e-08, 0.355156, 0.934807, 1, 1.096e-08, -5.31068e-08, -7.57784, 13.1487, 0)
+transform = Transform3D(1, 0, 0, 0, 0.772412, 0.635122, 0, -0.635122, 0.772412, 0, 7.71058, 5.46361)
+script = ExtResource("2_tqupu")
