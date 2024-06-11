@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b62tgy3ler8iv"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_wqo3g"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_j1440"]
+size = Vector2(20, 20)
+
+[node name="Environment" type="Node3D"]
+
+[node name="Floor" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_wqo3g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("PlaneMesh_j1440")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-2.91066e-08, 0.934807, -0.355156, 4.57521e-08, 0.355156, 0.934807, 1, 1.096e-08, -5.31068e-08, -7.57784, 13.1487, 0)
