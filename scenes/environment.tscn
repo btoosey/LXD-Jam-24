@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b62tgy3ler8iv"]
+[gd_scene load_steps=7 format=3 uid="uid://b62tgy3ler8iv"]
 
 [ext_resource type="PackedScene" uid="uid://bepb86cncapy4" path="res://scenes/player.tscn" id="1_3dbga"]
 [ext_resource type="Script" path="res://scenes/camera_3d.gd" id="2_tqupu"]
 [ext_resource type="PackedScene" uid="uid://bgudfl0uprgvj" path="res://scenes/companion_fish.tscn" id="3_57j2o"]
+[ext_resource type="Script" path="res://scenes/Label.gd" id="4_evc8w"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_wqo3g"]
 
@@ -34,3 +35,13 @@ script = ExtResource("2_tqupu")
 
 [node name="CompanionFish" parent="." instance=ExtResource("3_57j2o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.04312, 1.38183, 0)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+script = ExtResource("4_evc8w")
