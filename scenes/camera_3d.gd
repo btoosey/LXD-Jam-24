@@ -4,5 +4,5 @@ extends Camera3D
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	position = player.position + Vector3(0,10,10)

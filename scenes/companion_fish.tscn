@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgudfl0uprgvj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1gxbf"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xsn8y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dr8sj"]
+albedo_color = Color(1, 0.615686, 0, 1)
+
+[node name="CompanionFish" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_1gxbf")
+
+[node name="CompanionFishModel" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CompanionFishModel"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_xsn8y")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_dr8sj")
