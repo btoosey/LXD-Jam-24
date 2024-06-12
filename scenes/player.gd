@@ -34,3 +34,4 @@ func shoot_ray() -> void:
 	ray_query.to = to
 	var raycast_result = space.intersect_ray(ray_query)
 	target_position = raycast_result["position"] + Vector3(0,BODY_HEIGHT,0)
+	print(raycast_result)
