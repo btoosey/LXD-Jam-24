@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbiyhy1synad5"]
+
+[ext_resource type="PackedScene" uid="uid://bmcbavnhq4qa7" path="res://models/rock_01.glb" id="1_j0isa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gaee5"]
+albedo_color = Color(0.6, 0.6, 0.6, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cqr5n"]
+points = PackedVector3Array(-0.434693, -0.159049, -0.717979, 0.728868, -0.235707, 0.369571, 0.676091, -0.158094, 0.446359, -0.202213, -0.706601, 0.372801, -0.650252, 0.417133, 0.480856, 0.212837, 0.539325, -0.50885, 0.718367, -0.451301, -0.519235, 0.320762, 0.284936, 0.846839, 0.472489, 0.592509, 0.163644, -0.411673, 0.649882, -0.305015, -0.725022, -0.395038, 0.00825, -0.149654, -0.548847, -0.640933, 0.13768, 0.154448, -0.83272, 0.710534, -0.446744, 0.530038, -0.539542, -0.00343921, 0.631906, -0.741847, 0.125283, -0.300977, 0.0580374, -0.756722, 0.215902, 0.215621, 0.520407, 0.714984, 0.266442, -0.393669, 0.685028, -0.227641, 0.438153, -0.693045, 0.444962, 0.332044, -0.559788, -0.256068, 0.705366, -0.122768, 0.730083, -0.158508, -0.301989, -0.0977353, -0.262969, -0.822593, -0.620111, -0.446864, 0.373541, -0.437546, -0.44705, -0.61829, 0.526214, -0.601477, -0.277691, -0.046083, 0.0749812, 0.817708, 0.622935, 0.227537, 0.316676, -0.696462, 0.413026, -0.0956083, -0.0198361, -0.654988, -0.408692, 0.449551, 0.101047, -0.722124)
+
+[node name="Rock_01" type="Node3D"]
+
+[node name="rock_01" parent="." instance=ExtResource("1_j0isa")]
+transform = Transform3D(3.765, 0, 0, 0, 3.765, 0, 0, 0, 3.765, 0, 0, 0)
+
+[node name="Icosphere" parent="rock_01" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_gaee5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="rock_01/Icosphere" index="0" groups=["Obstacle"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rock_01/Icosphere/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_cqr5n")
+
+[editable path="rock_01"]

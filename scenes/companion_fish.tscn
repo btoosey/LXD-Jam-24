@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgudfl0uprgvj"]
+[gd_scene load_steps=5 format=3 uid="uid://bgudfl0uprgvj"]
+
+[ext_resource type="Script" path="res://scenes/companion_fish.gd" id="1_rley3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1gxbf"]
 
@@ -8,6 +10,7 @@
 albedo_color = Color(1, 0.615686, 0, 1)
 
 [node name="CompanionFish" type="CharacterBody3D"]
+script = ExtResource("1_rley3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
@@ -20,3 +23,8 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 
 mesh = SubResource("CapsuleMesh_xsn8y")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_dr8sj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

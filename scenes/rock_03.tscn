@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0ev5xk47h3uy"]
+
+[ext_resource type="PackedScene" uid="uid://buv5e45p67php" path="res://models/rock_03.glb" id="1_svdhb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lty8s"]
+albedo_color = Color(0.6, 0.6, 0.6, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5hwnd"]
+points = PackedVector3Array(-0.0544826, -0.21134, 0.804893, -0.298449, -0.426821, -0.82688, -0.350481, -0.450665, -0.740922, -0.269235, 0.78866, -0.201344, 0.869509, 0.441638, -0.0399573, 0.67866, -0.48153, 0.475597, -0.871022, -0.455819, -0.0129873, 0.324672, 0.44022, 0.690504, 0.702332, -0.451848, -0.526215, 0.244336, 0.414249, -0.664611, -0.692015, 0.461076, 0.0933418, -0.108313, -0.616047, 0.556006, -0.449839, 0.0091883, -0.674564, -0.190592, -0.619612, -0.584859, 0.108102, 0.791753, 0.311383, -0.45377, 0.301896, 0.494117, 0.489329, -0.618332, -0.366348, 0.188372, 0.761447, -0.255198, -0.16109, 0.464509, -0.684615, -0.322352, -0.314381, 0.68532, 0.708466, -0.429236, 0.532097, -0.808155, -0.0461333, -0.228508, 0.539234, 0.196148, -0.6061, -0.266383, 0.781241, 0.199975, -0.59453, -0.614239, 0.0408291, 0.488491, -0.617121, 0.366707, 0.878278, 0.362774, 0.0416579, 0.108316, -0.345011, 0.7728, 0.50911, 0.463581, -0.468554, 0.320675, 0.783515, -0.0395183, -0.13601, -0.101874, 0.803203, -0.18919, -0.343988, -0.824073)
+
+[node name="Rock_03" type="Node3D"]
+
+[node name="rock_03" parent="." instance=ExtResource("1_svdhb")]
+transform = Transform3D(3.33, 0, 0, 0, 3.33, 0, 0, 0, 3.33, 0, 0, 0)
+
+[node name="Icosphere" parent="rock_03" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_lty8s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="rock_03/Icosphere" index="0" groups=["Obstacle"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rock_03/Icosphere/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_5hwnd")
+
+[editable path="rock_03"]
