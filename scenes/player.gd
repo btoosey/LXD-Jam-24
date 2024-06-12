@@ -21,7 +21,7 @@ func _physics_process(_delta: float) -> void:
 func _input(event):
 	if event.is_action_pressed("mouse_left"):
 		shoot_ray()
-		look_at(target_position, Vector3.UP)
+		
 
 func shoot_ray() -> void:
 	mouse_position  = get_viewport().get_mouse_position()
@@ -33,8 +33,9 @@ func shoot_ray() -> void:
 	ray_query.from = from
 	ray_query.to = to
 	var raycast_result = space.intersect_ray(ray_query)
-
+	
 	if raycast_result["collider"].is_in_group("Obstacle"):
 		return
 	else:
 		target_position = raycast_result["position"] + Vector3(0,BODY_HEIGHT,0)
+		look_at(target_position, Vector3.UP)

@@ -9,7 +9,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dr8sj"]
 albedo_color = Color(1, 0.615686, 0, 1)
 
-[node name="CompanionFish" type="CharacterBody3D"]
+[node name="CompanionFish" type="CharacterBody3D" groups=["Obstacle"]]
 script = ExtResource("1_rley3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

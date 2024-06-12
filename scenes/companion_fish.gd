@@ -8,7 +8,7 @@ func _ready():
 	choose_target()
 	timer.start()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if target_position == null:
 		position = target_position
 
