@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://d32w711i7xvb7"]
+
+[ext_resource type="PackedScene" uid="uid://ck6o6kfcfb1so" path="res://models/seagrass.glb" id="1_151f2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnfx0"]
+albedo_color = Color(0.0901961, 0.345098, 0, 1)
+
+[node name="Seagrass" type="Node3D"]
+
+[node name="seagrass" parent="." instance=ExtResource("1_151f2")]
+
+[node name="Cube" parent="seagrass" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wnfx0")
+
+[node name="Cube_001" parent="seagrass" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wnfx0")
+
+[node name="Cube_002" parent="seagrass" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wnfx0")
+
+[editable path="seagrass"]
