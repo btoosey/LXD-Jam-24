@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bepb86cncapy4"]
+[gd_scene load_steps=9 format=3 uid="uid://bepb86cncapy4"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_awnix"]
 
@@ -8,6 +8,16 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w3i10"]
 albedo_color = Color(1, 0.752941, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_4ry08"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qi5t"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_0op78"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fk2j0"]
+albedo_color = Color(0, 0, 0, 1)
 
 [node name="Player" type="CharacterBody3D" groups=["Obstacle"]]
 script = ExtResource("1_awnix")
@@ -22,3 +32,18 @@ shape = SubResource("CapsuleShape3D_nunnd")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_nu7e3")
 surface_material_override/0 = SubResource("StandardMaterial3D_w3i10")
+
+[node name="Eye1" type="MeshInstance3D" parent="CharacterModel"]
+transform = Transform3D(0.138, 0, 0, 0, 0.42, 0, 0, 0, 0.42, 0.48, 0, -0.493)
+mesh = SubResource("SphereMesh_4ry08")
+surface_material_override/0 = SubResource("StandardMaterial3D_3qi5t")
+
+[node name="Eye2" type="MeshInstance3D" parent="CharacterModel"]
+transform = Transform3D(0.138, 0, 0, 0, 0.42, 0, 0, 0, 0.42, -0.48, 0, -0.493)
+mesh = SubResource("SphereMesh_4ry08")
+surface_material_override/0 = SubResource("StandardMaterial3D_3qi5t")
+
+[node name="DorsalFin" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.138614, 0, 0, 0, 0.209776, 0, 0, 0, 1.18327, 0, 0.461967, 0)
+mesh = SubResource("SphereMesh_0op78")
+surface_material_override/0 = SubResource("StandardMaterial3D_fk2j0")

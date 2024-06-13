@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgudfl0uprgvj"]
+[gd_scene load_steps=7 format=3 uid="uid://bgudfl0uprgvj"]
 
 [ext_resource type="Script" path="res://scenes/companion_fish.gd" id="1_rley3"]
 
@@ -8,6 +8,11 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dr8sj"]
 albedo_color = Color(1, 0.615686, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_vnk3r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jvdv7"]
+albedo_color = Color(0, 0, 0, 1)
 
 [node name="CompanionFish" type="CharacterBody3D" groups=["Obstacle"]]
 script = ExtResource("1_rley3")
@@ -23,6 +28,21 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 
 mesh = SubResource("CapsuleMesh_xsn8y")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_dr8sj")
+
+[node name="Eye1" type="MeshInstance3D" parent="CompanionFishModel"]
+transform = Transform3D(0.138315, 0, 0, 0, 0.419961, 0, 0, 0, 0.419961, -0.48, 0, -0.493)
+mesh = SubResource("SphereMesh_vnk3r")
+surface_material_override/0 = SubResource("StandardMaterial3D_jvdv7")
+
+[node name="Eye2" type="MeshInstance3D" parent="CompanionFishModel"]
+transform = Transform3D(0.138614, 0, 0, 0, 0.420868, 0, 0, 0, 0.420868, 0.48, 0, -0.493)
+mesh = SubResource("SphereMesh_vnk3r")
+surface_material_override/0 = SubResource("StandardMaterial3D_jvdv7")
+
+[node name="DorsalFin" type="MeshInstance3D" parent="CompanionFishModel"]
+transform = Transform3D(0.138614, 0, 0, 0, 0.209776, 0, 0, 0, 1.18327, 0, 0.461967, 0)
+mesh = SubResource("SphereMesh_vnk3r")
+surface_material_override/0 = SubResource("StandardMaterial3D_jvdv7")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
