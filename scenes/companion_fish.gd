@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 var target_position: Vector3
+var active: bool = false
 const SPEED: float = 7
 @onready var timer = $Timer
 @onready var target_position_raycast = $TargetPositionRaycast
@@ -15,7 +16,9 @@ func _physics_process(_delta):
 
 	var direction = global_position.direction_to(target_position)
 	velocity = direction * SPEED
-	move_and_slide()
+	
+	if active:
+		move_and_slide()
 
 	if position.distance_to(target_position) <= 0.1:
 		target_position = position

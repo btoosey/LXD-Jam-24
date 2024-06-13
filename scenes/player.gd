@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 const BODY_HEIGHT: float = 1.5
 const SPEED: float = 5
+var active: bool = false
 
 var mouse_position: Vector2
 var target_position: Vector3
@@ -13,7 +14,9 @@ func _physics_process(_delta: float) -> void:
 
 	var direction = global_position.direction_to(target_position)
 	velocity = direction * SPEED
-	move_and_slide()
+
+	if active:
+		move_and_slide()
 
 	if position.distance_to(target_position) <= 0.1:
 		target_position = position
