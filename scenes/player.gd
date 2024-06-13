@@ -21,7 +21,6 @@ func _physics_process(_delta: float) -> void:
 func _input(event):
 	if event.is_action_pressed("mouse_left"):
 		shoot_ray()
-		
 
 func shoot_ray() -> void:
 	mouse_position  = get_viewport().get_mouse_position()
