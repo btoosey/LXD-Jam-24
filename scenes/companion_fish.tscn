@@ -27,4 +27,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_dr8sj")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 
+[node name="TargetPositionRaycast" type="RayCast3D" parent="."]
+debug_shape_thickness = 5
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

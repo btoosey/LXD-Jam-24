@@ -19,7 +19,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_gaee5")
 [node name="StaticBody3D" type="StaticBody3D" parent="rock_01/Icosphere" index="0" groups=["Obstacle"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="rock_01/Icosphere/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_cqr5n")
 
 [editable path="rock_01"]
