@@ -7,6 +7,7 @@ var active: bool = false
 var mouse_position: Vector2
 var target_position: Vector3
 @onready var camera_3d = $"../Camera3D"
+@onready var game_state_machine = $"../GameStateMachine"
 
 func _physics_process(_delta: float) -> void:
 	if target_position == null:
@@ -22,8 +23,9 @@ func _physics_process(_delta: float) -> void:
 		target_position = position
 
 func _input(event):
-	if event.is_action_pressed("mouse_left"):
-		shoot_ray()
+	if active:
+		if event.is_action_pressed("mouse_left"):
+			shoot_ray()
 
 func shoot_ray() -> void:
 	mouse_position  = get_viewport().get_mouse_position()

@@ -18,3 +18,6 @@ func _on_score_interval_timer_timeout():
 
 func _on_retry_button_pressed():
 	game_state_machine._on_transition_requested(game_state_machine.current_state, GameState.State.PLAY)
+
+func _on_start_button_pressed():
+	game_state_machine._on_transition_requested(game_state_machine.current_state, GameState.State.PLAY)
